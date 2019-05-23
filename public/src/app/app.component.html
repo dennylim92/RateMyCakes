@@ -1,0 +1,33 @@
+
+<div style="text-align:center; width: 1200px;">
+  <h1>
+    Rate My Cakes
+  </h1>
+
+  <div class="submit" style="border: 2px solid gray; height: 250px; width: 300px; display: inline-block;">
+    <form>
+      <h3>Submit a cake to be rated</h3>
+      <hr>
+      <p>Baker name:</p>
+      <input type="text" name="bakerName" [(ngModel)]="newCake.bakerName">
+      <p>Image url:</p>
+      <input type="url" name="imageURL" [(ngModel)]="newCake.imageURL">
+      <br>
+      <br>
+      <input (click)="addNewCake()" type="submit" value="SUBMIT">
+      <br>
+      <br>
+    </form>
+  </div>
+
+
+  <div style="display: inline-block; vertical-align: top; width: 450px; height: 250px; overflow:auto;">
+    <app-review *ngFor="let cake of cakes" [showCakes]="cake" (refreshPage)="showOneCake($event)" (gotCakeEmitter)="showOneCake($event)"></app-review>
+  </div>
+
+  <app-cake *ngIf="isCakeSelected" [unoCake]="singleCake" [avgRating]="averageRating"></app-cake>
+
+</div>
+
+
+

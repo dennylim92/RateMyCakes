@@ -1,0 +1,22 @@
+<br>
+<br>
+<div style="height: 300px; width: 1200px; text-align: center;">
+
+  <div style="height: 300px; width: 225px; display: inline-block;">
+    <h1>Baked by {{ unoCake.bakerName }}</h1>
+    <br>
+    <img style="height: 200px; width: 225px" src="{{ unoCake.imageURL }}" alt="cake">
+  </div>
+
+
+  <div style="overflow:auto; height: 180px; width: 200px; display: inline-block;">
+    <h5>Average rating: {{ avgRating }} stars</h5>
+    <br>
+    <ul *ngFor="let review of unoCake.reviews">
+      <h5>{{ review.comment }}</h5>
+      <h5>{{ review.rating }} stars</h5>
+      <br>
+    </ul>
+  </div>
+
+</div>

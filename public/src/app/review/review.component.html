@@ -1,0 +1,20 @@
+<form>
+    <img style="height: 100px; width: 115px;" src="{{ showCakes.imageURL }}" alt="cake" (click)="oneCake(showCakes._id)">
+    <br>
+    <select name="rating" [(ngModel)]="cakeReview.rating">
+      <option value="0">0 Star</option>
+      <option value="1">1 Star</option>
+      <option value="2">2 Stars</option>
+      <option value="3">3 Stars</option>
+      <option value="4">4 Stars</option>
+      <option value="5">5 Stars</option>
+    </select>
+    <br>
+    <br>
+    <textarea style="height: 80px; width: 200px;" name="comment" [(ngModel)]="cakeReview.comment">Type your comment here</textarea>
+    <br>
+    <input (click)="submitReview(showCakes._id)" type="submit" value="Rate!">
+    <br>
+    <br>
+  </form>
+
